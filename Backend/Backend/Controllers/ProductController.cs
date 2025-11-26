@@ -26,14 +26,5 @@ namespace Backend.Controllers
             await ProductCollection.InsertOneAsync(product);
             return "Produs creat cu succes!";
         }
-   
-
-
-
-
-
-
     }
-
-
 }
