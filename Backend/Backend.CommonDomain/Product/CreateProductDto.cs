@@ -4,14 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Backend.Domain.Product
+namespace Backend.CommonDomain.Product
 {
-    public class Products
+    public class CreateProductDto
     {
-        public int Code { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public int YearofManufacture {  get; set; }
-        
+        public decimal Price { get; set; }
     }
 }
