@@ -1,4 +1,5 @@
-﻿using Backend.Database;
+﻿using Backend.CommonDomain.Cart;
+using Backend.Database;
 using Backend.Domain;
 using MongoDB.Driver;
 
@@ -31,5 +32,7 @@ namespace Backend.Repositories
       var filter = Builders<User>.Filter.Eq("Email", email);
       return await userCollection.Find(filter).FirstOrDefaultAsync();
     }
-  }
+    
+    
+    }
 }

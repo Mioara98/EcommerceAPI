@@ -1,5 +1,4 @@
 ﻿using Backend.CommonDomain.Users;
-using Backend.Database;
 using Backend.Domain;
 using Backend.Repositories;
 using Backend.Services;
@@ -9,12 +8,12 @@ namespace Backend.BusinessLogic.FacadeSystem.UserFacade.Login
 {
   public class FacadeLogin
   {
-    private readonly DataBase _database;
+  
     private HashingService hashingService;
     private readonly UserRepository userRepository;
-    public FacadeLogin(DataBase database,HashingService hashingService, UserRepository userRepository)
+    public FacadeLogin(HashingService hashingService, UserRepository userRepository)
     {
-      _database = database;
+      
       this.hashingService = hashingService;
       this.userRepository = userRepository;
     }

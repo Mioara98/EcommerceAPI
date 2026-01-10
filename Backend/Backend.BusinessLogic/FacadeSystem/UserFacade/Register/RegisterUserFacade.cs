@@ -1,6 +1,6 @@
 ﻿using Backend.BusinessLogic.Factory;
 using Backend.CommonDomain.Users;
-using Backend.Database;
+
 using Backend.Domain;
 using Backend.Repositories;
 using Backend.Services;
@@ -12,7 +12,7 @@ namespace Backend.BusinessLogic.FacadeSystem.UserFacade.Register
     private readonly UserRepository userRepository;
     private readonly UserFactory userFactory;
 
-    public RegisterUserFacade(DataBase database, UserRepository userRepository, UserFactory userFactory)
+    public RegisterUserFacade(UserRepository userRepository, UserFactory userFactory)
     {
       this.userRepository = userRepository;
       this.userFactory = userFactory;

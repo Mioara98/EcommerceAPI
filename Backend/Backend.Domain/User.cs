@@ -1,4 +1,5 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
+﻿using Backend.Domain.CardDomain;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace Backend.Domain
 {
@@ -21,5 +22,6 @@ namespace Backend.Domain
         public DateTime Deleted { get; set; }
         public DateTime Created { get; set; }
         public DateTime Inactive { get; set; }
+        public Cart Cart {  get; set; } = new Cart();
     }
 }

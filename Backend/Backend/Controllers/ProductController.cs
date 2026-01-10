@@ -1,4 +1,7 @@
-﻿using Backend.CommonDomain.Product;
+﻿using Backend.BusinessLogic.FacadeSystem.ProductFacade;
+using Backend.BusinessLogic.FacadeSystem.UserFacade.Login;
+using Backend.BusinessLogic.FacadeSystem.UserFacade.Register;
+using Backend.CommonDomain.Product;
 using Backend.CommonDomain.Users;
 using Backend.Database;
 using Backend.Domain;
@@ -13,18 +16,22 @@ namespace Backend.Controllers
     [Route("[controller]")]
     public class ProductController : ControllerBase
     {
-        [HttpPost("CreateProduct")]
-        public async Task<string> CreateProduct(CreateProductDto request)
-
+        CreateProductFacade createProductFacade;
+        public ProductController(CreateProductFacade createProductFacade)
         {
-            Product product = new Product();
-            product.Name = request.Name;
-            product.Description = request.Description;
-            product.Price = request.Price;
-
-            var ProductCollection = new Backend.Database.DataBase().GetProductCollection();
-            await ProductCollection.InsertOneAsync(product);
-            return "Produs creat cu succes!";
+           this.createProductFacade = createProductFacade;
         }
+
+
+
+        [HttpPost("CreateProduct")]
+        public async Task<IActionResult> CreateProduct(CreateProductDto request)
+        {
+            var response = await createProductFacade.PerfomAction(request);
+            return this.Ok ("Produs creat cu succes!");
+        }
+
+
+        
     }
 }

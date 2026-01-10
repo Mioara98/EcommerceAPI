@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Backend.BusinessLogic\Backend.BusinessLogic.csproj" />
     <ProjectReference Include="..\Backend.CommonDomain\Backend.CommonDomain.csproj" />
     <ProjectReference Include="..\Backend.Database\Backend.Database.csproj" />
     <ProjectReference Include="..\Backend.Domain\Backend.Domain.csproj" />

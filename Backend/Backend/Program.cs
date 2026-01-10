@@ -1,6 +1,8 @@
+using Backend.BusinessLogic.FacadeSystem.ProductFacade;
 using Backend.BusinessLogic.FacadeSystem.UserFacade.Login;
 using Backend.BusinessLogic.FacadeSystem.UserFacade.Register;
 using Backend.BusinessLogic.Factory;
+using Backend.CommonDomain.Product;
 using Backend.Database;
 using Backend.Repositories;
 using Backend.Services;
@@ -33,7 +35,11 @@ internal class Program
     builder.Services.AddSingleton<HashingService>();// HashingService hashingService = new HashingService();
     builder.Services.AddSingleton<UserRepository>();
     builder.Services.AddSingleton<UserFactory>();
-    var app = builder.Build();
+    builder.Services.AddSingleton<ProductFactory>();
+    builder.Services.AddSingleton<ProductRepository>();
+    builder.Services.AddSingleton<CreateProductFacade>();
+
+        var app = builder.Build();
     app.UseCors("AllowAll");
 
     // Configure the HTTP request pipeline.

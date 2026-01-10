@@ -6,4 +6,11 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Backend.CommonDomain\Backend.CommonDomain.csproj" />
+    <ProjectReference Include="..\Backend.Domain\Backend.Domain.csproj" />
+    <ProjectReference Include="..\Backend.Repositories\Backend.Repositories.csproj" />
+    <ProjectReference Include="..\Backend.Services\Backend.Services.csproj" />
+  </ItemGroup>
+
 </Project>
